@@ -1,22 +1,9 @@
-/*
- * rb.c
- *
- * Created: 2018-04-14 ���� 3:12:06
- *  Author: dauera
- */
-
 #include "rb.h"
 
 #include <assert.h>
 #include <string.h>
 #include <stdlib.h>
-   
-/**
-  * @brief  ring buffer init.
-  * @param  ptRB		
-  					size 		
-  * @retval unsigned int 0 ����
-  */
+
 unsigned char 
 RB_init(RingFifo_t * ptRB, unsigned short size)
 {
@@ -24,14 +11,14 @@ RB_init(RingFifo_t * ptRB, unsigned short size)
     if(size & (size-1))
       return 1;
     
-		ptRB->size = size;
-		ptRB->wrIdx= 0;
-		ptRB->rdIdx= 0;
-		ptRB->data = malloc(size);
+	ptRB->size = size;
+	ptRB->wrIdx= 0;
+	ptRB->rdIdx= 0;
+	ptRB->data = malloc(size);
     
     assert(ptRB->data);
     
-		return 0;		
+	return 0;
 }
 
 void
